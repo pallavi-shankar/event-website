@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sparkle style */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #fde047 0%, #fde04788 60%, transparent 100%);
+  border-radius: 9999px;
+  filter: drop-shadow(0 0 8px #fde047);
+  animation: floatSparkle 6s linear infinite, twinkle 2.5s ease-in-out infinite;
+  opacity: 0.8;
+}
+@keyframes floatSparkle {
+  0% { transform: translateY(0) translateX(0) scale(1); }
+  50% { transform: translateY(-20px) translateX(10px) scale(1.2); }
+  100% { transform: translateY(0) translateX(0) scale(1); }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+html {
+  scroll-behavior: smooth;
+}
